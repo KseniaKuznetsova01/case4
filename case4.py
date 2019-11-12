@@ -1,7 +1,7 @@
 import local as lc
 text = input(lc.TEXT)
 text1 = text
-number_s= 0
+number_s = 0
 number_w = 1
 sentence = text.find('.')
 while sentence != -1:
@@ -19,6 +19,7 @@ print(lc.WORDS, number_w)
 syllables = 1
 number = len(text)
 for i in text:
-    if i == 'а' or i == 'у' or i == 'е' or i == 'о' or i == 'ю' or i == 'и' or i == 'я' or i == 'э' or i == 'ё' or i == 'ы':
+    if i == 'а' or i == 'у' or i == 'е' or i == 'о' or i == 'ю' or i == 'и' \
+            or i == 'я' or i == 'э' or i == 'ё' or i == 'ы':
         syllables += 1
 print(lc.SYLLABLES, syllables)
