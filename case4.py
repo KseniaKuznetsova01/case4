@@ -22,4 +22,13 @@ for i in text:
     if i == 'а' or i == 'у' or i == 'е' or i == 'о' or i == 'ю' or i == 'и' \
             or i == 'я' or i == 'э' or i == 'ё' or i == 'ы':
         syllables += 1
+
 print(lc.SYLLABLES, syllables)
+
+number_asl = number_w / number_s
+print(lc.ASENTENCE, '{:.3f}'.format(number_asl))
+number_asw = syllables / number_w
+print(lc.ASYLLABLES, '{:.3f}'.format(number_asw))
+
+number_fre = 206.835 - (1.3 * number_asl) - (60.1 * number_asw)
+print(lc.FRE, '{:.4f}'.format(number_fre))
