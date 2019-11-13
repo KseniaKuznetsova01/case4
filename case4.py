@@ -32,6 +32,7 @@ for i in text:
             or i == 'я' or i == 'э' or i == 'ё' or i == 'ы':
         syllables += 1
 
+
 print(lc.SYLLABLES, syllables)
 
 number_asl = number_w / number_s
