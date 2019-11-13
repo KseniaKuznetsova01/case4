@@ -26,6 +26,7 @@ while words != -1:
 print(lc.WORDS, number_w)
 syllables = 0
 number = len(text)
+
 for i in text:
     if i == 'а' or i == 'у' or i == 'е' or i == 'о' or i == 'ю' or i == 'и' \
             or i == 'я' or i == 'э' or i == 'ё' or i == 'ы':
@@ -39,6 +40,7 @@ number_asw = syllables / number_w
 print(lc.ASYLLABLES, number_asw)
 
 number_fre_russ = 206.835 - (1.3 * number_asl) - (60.1 * number_asw)
+
 number_fre_enl = 206.835 - (1.015 * number_asl) - (84.6 * number_asw)
 
 print(lc.FRE, number_fre_russ)
