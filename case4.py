@@ -39,7 +39,7 @@ number_asw = syllables / number_w
 print(lc.ASYLLABLES, number_asw)
 
 number_fre_russ = 206.835 - (1.3 * number_asl) - (60.1 * number_asw)
-number_fre_enlish = 206.835 - (1.015 * number_asl) - (84.6 * number_asw)
+number_fre_enl = 206.835 - (1.015 * number_asl) - (84.6 * number_asw)
 
 print(lc.FRE, number_fre_russ)
 if number_fre_russ <= 25:
