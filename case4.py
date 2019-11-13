@@ -31,13 +31,13 @@ number_asw = syllables / number_w
 print(lc.ASYLLABLES, '{:.3f}'.format(number_asw))
 
 number_fre = 206.835 - (1.3 * number_asl) - (60.1 * number_asw)
-fre = '{:.4f}'.format(number_fre)
-print(lc.FRE, fre)
-if fre <= 25:
+
+print(lc.FRE, '{:.4f}'.format(number_fre))
+if number_fre <= 25:
     print(lc.HARD)
-elif 25 < fre <= 50:
+elif 25 < number_fre <= 50:
     print(lc.M_HARD)
-elif 50 < fre <= 80:
+elif 50 < number_fre <= 80:
     print(lc.M_EASY)
 else:
     print(lc.EASY)
