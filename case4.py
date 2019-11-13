@@ -7,6 +7,7 @@ Panukova E. (65%) , Kuznetsova K. (70%)
 from textblob import TextBlob
 import local as lc
 text = input(lc.TEXT)
+text = text.lower()
 text1 = text
 number_s = 0
 number_w = 1
@@ -23,7 +24,7 @@ while words != -1:
     text1 = text1[words+1:]
     words = text1.find(' ')
 print(lc.WORDS, number_w)
-syllables = 1
+syllables = 0
 number = len(text)
 for i in text:
     if i == 'а' or i == 'у' or i == 'е' or i == 'о' or i == 'ю' or i == 'и' \
