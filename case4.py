@@ -26,13 +26,16 @@ while words != -1:
 print(lc.WORDS, number_w)
 syllables = 0
 number = len(text)
-
+english = 0
+russian = 0
 for i in text:
     if i == 'а' or i == 'у' or i == 'е' or i == 'о' or i == 'ю' or i == 'и' \
             or i == 'я' or i == 'э' or i == 'ё' or i == 'ы':
         syllables += 1
-
-
+        russian += 1
+    elif i == 'e' or i == 'y' or i == 'u' or i == 'i' or i == 'o' or i == 'a':
+        syllables += 1
+        english += 1
 print(lc.SYLLABLES, syllables)
 
 number_asl = number_w / number_s
@@ -40,16 +43,20 @@ print(lc.ASENTENCE, number_asl)
 number_asw = syllables / number_w
 print(lc.ASYLLABLES, number_asw)
 
-number_fre_russ = 206.835 - (1.3 * number_asl) - (60.1 * number_asw)
+number_fre_text = 0
+if english == 0:
+    number_fre_russ = 206.835 - (1.3 * number_asl) - (60.1 * number_asw)
+    number_fre_text = number_fre_russ
+else:
+    number_fre_enl = 206.835 - (1.015 * number_asl) - (84.6 * number_asw)
+    number_fre_text = number_fre_enl
 
-number_fre_enl = 206.835 - (1.015 * number_asl) - (84.6 * number_asw)
-
-print(lc.FRE, number_fre_russ)
-if number_fre_russ <= 25:
+print(lc.FRE, number_fre_text)
+if number_fre_text <= 25:
     print(lc.HARD)
-elif 25 < number_fre_russ <= 50:
+elif 25 < number_fre_text <= 50:
     print(lc.M_HARD)
-elif 50 < number_fre_russ <= 80:
+elif 50 < number_fre_text <= 80:
     print(lc.M_EASY)
 else:
     print(lc.EASY)
