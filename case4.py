@@ -34,18 +34,19 @@ for i in text:
 print(lc.SYLLABLES, syllables)
 
 number_asl = number_w / number_s
-print(lc.ASENTENCE, '{:.3f}'.format(number_asl))
+print(lc.ASENTENCE, number_asl)
 number_asw = syllables / number_w
-print(lc.ASYLLABLES, '{:.3f}'.format(number_asw))
+print(lc.ASYLLABLES, number_asw)
 
-number_fre = 206.835 - (1.3 * number_asl) - (60.1 * number_asw)
+number_fre_russ = 206.835 - (1.3 * number_asl) - (60.1 * number_asw)
+number_fre_enlish = 206.835 - (1.015 * number_asl) - (84.6 * number_asw)
 
-print(lc.FRE, '{:.4f}'.format(number_fre))
-if number_fre <= 25:
+print(lc.FRE, '{:.4f}'.format(number_fre_russ))
+if number_fre_russ <= 25:
     print(lc.HARD)
-elif 25 < number_fre <= 50:
+elif 25 < number_fre_russ <= 50:
     print(lc.M_HARD)
-elif 50 < number_fre <= 80:
+elif 50 < number_fre_russ <= 80:
     print(lc.M_EASY)
 else:
     print(lc.EASY)
