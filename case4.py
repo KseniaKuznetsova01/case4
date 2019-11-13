@@ -1,3 +1,10 @@
+""" Case-study #3 Investment report
+Developers:
+
+Panukova E. (65%) , Kuznetsova K. (70%)
+
+"""
+from textblob import TextBlob
 import local as lc
 text = input(lc.TEXT)
 text1 = text
