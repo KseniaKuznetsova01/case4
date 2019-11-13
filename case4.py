@@ -26,13 +26,16 @@ while words != -1:
 print(lc.WORDS, number_w)
 syllables = 0
 number = len(text)
+english = 0
+russian = 0
 for i in text:
     if i == 'а' or i == 'у' or i == 'е' or i == 'о' or i == 'ю' or i == 'и' \
             or i == 'я' or i == 'э' or i == 'ё' or i == 'ы':
         syllables += 1
+        russian += 1
     elif i == 'a' or i == 'e' or i == 'i' or i == 'o' or i == 'u' or i == 'y':
         syllables += 1
-
+        english +=1
 print(lc.SYLLABLES, syllables)
 
 number_asl = number_w / number_s
