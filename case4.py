@@ -8,8 +8,8 @@ from textblob import TextBlob
 import local as lc
 
 
-text = input(lc.TEXT)
-text = text.lower()
+text2 = input(lc.TEXT)
+text = text2.lower()
 text1 = text
 number_s = 0
 number_w = 1
@@ -54,18 +54,51 @@ print(lc.ASYLLABLES, number_asw)
 
 number_fre_text = 0
 if english == 0:
-    number_fre_russ = 206.835 - (1.3 * number_asl) - (60.1 * number_asw)
-    number_fre_text = number_fre_russ
-else:
-    number_fre_enl = 206.835 - (1.015 * number_asl) - (84.6 * number_asw)
-    number_fre_text = number_fre_enl
+    number_fre_text = 206.835 - (1.3 * number_asl) - (60.1 * number_asw)
+    print(lc.FRE, number_fre_text)
 
-print(lc.FRE, number_fre_text)
-if number_fre_text <= 25:
-    print(lc.HARD)
-elif 25 < number_fre_text <= 50:
-    print(lc.M_HARD)
-elif 50 < number_fre_text <= 80:
-    print(lc.M_EASY)
+    if number_fre_text <= 25:
+        print(lc.HARD)
+    elif 25 < number_fre_text <= 50:
+        print(lc.M_HARD)
+    elif 50 < number_fre_text <= 80:
+        print(lc.M_EASY)
+    else:
+        print(lc.EASY)
+
+    polarity_1 = TextBlob(text2)
+    polarity = polarity_1.sentiment
+    if polarity < 0:
+        print(lc.NEGATIVITY)
+    elif polarity == 0:
+        print(lc.NONE)
+    elif polarity > 0:
+        print(lc.POSITIVITY)
+
 else:
-    print(lc.EASY)
+    number_fre_text = 206.835 - (1.015 * number_asl) - (84.6 * number_asw)
+    print(lc.FRE, number_fre_text)
+
+    if number_fre_text <= 25:
+        print(lc.HARD)
+    elif 25 < number_fre_text <= 50:
+        print(lc.M_HARD)
+    elif 50 < number_fre_text <= 80:
+        print(lc.M_EASY)
+    else:
+        print(lc.EASY)
+
+    polarity_1 = TextBlob(text2)
+    polarity = polarity_1.sentiment
+    if polarity < 0:
+        print(lc.NEGATIVITY)
+    elif polarity == 0:
+        print(lc.NONE)
+    elif polarity > 0:
+        print(lc.POSITIVITY)
+
+    objectivity = TextBlob(text2)
+    objectivity_1 = 100 - objectivity.subjectivity * 100
+    print(lc.OBJECTIVITY, '{}%'.format(objectivity_1))
+
+
