@@ -67,9 +67,9 @@ if english == 0:
         print(lc.EASY)
 
     polarity_1 = TextBlob(text2)
-    polarity = polarity_1.sentiment                              # Returns the subjectivity score.
+    polarity = polarity_1.sentiment                      # Returns the polarity score.
     polarity_2 = int(polarity[0])
-    subjectivity = int(polarity[1])
+
 
     if polarity_2 < 0:
         print(lc.NEGATIVITY)
@@ -92,7 +92,7 @@ else:
         print(lc.EASY)
 
     polarity_1 = TextBlob(text2)
-    polarity = polarity_1.sentiment                                  # Returns the subjectivity score.
+    polarity = polarity_1.sentiment                      # Returns the subjectivity and polarity score.
     polarity_2 = int(polarity[0])
     subjectivity = int(polarity[1])
 
