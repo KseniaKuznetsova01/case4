@@ -70,7 +70,6 @@ if english == 0:
     polarity = polarity_1.sentiment                      # Returns the polarity score.
     polarity_2 = int(polarity[0])
 
-
     if polarity_2 < 0:
         print(lc.NEGATIVITY)
     elif polarity_2 == 0:
