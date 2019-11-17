@@ -4,12 +4,12 @@ Developers:
 Panukova E. (65%) , Kuznetsova K. (70%)
 
 """
-from textblob import TextBlob
-import local as lc
+from textblob import TextBlob                            # Imports the module TextBlob.
+import local as lc                                       # Imports the module Local.
 
 
 text2 = input(lc.TEXT)
-text = text2.lower()
+text = text2.lower()                                     # Lowercase translation of the entered text.
 text1 = text
 number_s = 0
 number_w = 1
@@ -47,14 +47,14 @@ for i in text:
 
 print(lc.SYLLABLES, syllables)
 
-number_asl = number_w / number_s
+number_asl = number_w / number_s                         # The calculation of the index of ASL.
 print(lc.ASENTENCE, number_asl)
-number_asw = syllables / number_w
+number_asw = syllables / number_w                        # The calculation of the index of ASW.
 print(lc.ASYLLABLES, number_asw)
 
 number_fre_text = 0
 if english == 0:
-    number_fre_text = 206.835 - (1.3 * number_asl) - (60.1 * number_asw)
+    number_fre_text = 206.835 - (1.3 * number_asl) - (60.1 * number_asw)     # The calculation of the index of Flesh.
     print(lc.FRE, number_fre_text)
 
     if number_fre_text <= 25:
@@ -67,12 +67,15 @@ if english == 0:
         print(lc.EASY)
 
     polarity_1 = TextBlob(text2)
-    polarity = polarity_1.sentiment
-    if polarity < 0:
+    polarity = polarity_1.sentiment                              # Returns the subjectivity score.
+    polarity_2 = int(polarity[0])
+    subjectivity = int(polarity[1])
+
+    if polarity_2 < 0:
         print(lc.NEGATIVITY)
-    elif polarity == 0:
+    elif polarity_2 == 0:
         print(lc.NONE)
-    elif polarity > 0:
+    elif polarity_2 > 0:
         print(lc.POSITIVITY)
 
 else:
@@ -89,16 +92,17 @@ else:
         print(lc.EASY)
 
     polarity_1 = TextBlob(text2)
-    polarity = polarity_1.sentiment
-    if polarity < 0:
+    polarity = polarity_1.sentiment                                  # Returns the subjectivity score.
+    polarity_2 = int(polarity[0])
+    subjectivity = int(polarity[1])
+
+    if polarity_2 < 0:
         print(lc.NEGATIVITY)
-    elif polarity == 0:
+    elif polarity_2 == 0:
         print(lc.NONE)
-    elif polarity > 0:
+    elif polarity_2 > 0:
         print(lc.POSITIVITY)
 
-    objectivity = TextBlob(text2)
-    objectivity_1 = 100 - objectivity.subjectivity * 100
-    print(lc.OBJECTIVITY, '{}%'.format(objectivity_1))
+    print(lc.OBJECTIVITY, '{}%'.format(subjectivity))
 
 
