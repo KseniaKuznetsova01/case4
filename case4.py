@@ -19,11 +19,15 @@ text1 = text
 number_s = 0
 number_w = 1
 sentence = text.find('.')
+sentence1 = text.find('!')
+sentence2 = text.find('?')
 
-while sentence != -1:
+while sentence != -1 or sentence1 != -1 or sentence2 != -1:
     number_s += 1
     text1 = text1[sentence+1:]
     sentence = text1.find('.')
+    sentence1 = text.find('!')
+    sentence2 = text.find('?')
 
 print(lc.SENTENCE, number_s)
 text1 = text
