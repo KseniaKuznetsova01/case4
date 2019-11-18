@@ -96,9 +96,8 @@ else:
         print(lc.EASY)
 
     polarity_1 = TextBlob(text2)
-    polarity = polarity_1.sentiment                      # Returns the subjectivity and polarity score.
+    polarity = polarity_1.sentiment                      # Returns the polarity score.
     polarity_2 = int(polarity[0])
-    subjectivity = int(polarity[1])
 
     if polarity_2 < 0:
         print(lc.NEGATIVITY)
@@ -107,6 +106,8 @@ else:
     elif polarity_2 > 0:
         print(lc.POSITIVITY)
 
-    print(lc.OBJECTIVITY, '{}%'.format(subjectivity))
+    sub = TextBlob(text2)
+    objectivity = 100 - sub.subjectivity * 100           # Returns the objectivity score.
+    print(lc.OBJECTIVITY, '{}%'.format(objectivity))
 
 
