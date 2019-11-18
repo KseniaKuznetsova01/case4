@@ -5,7 +5,12 @@ Panukova E. (65%) , Kuznetsova K. (70%)
 
 """
 from textblob import TextBlob                            # Imports the module TextBlob.
-import local as lc                                       # Imports the module Local.
+print('English - 0\nРусский - 1')
+lang = int(input())
+if lang == 1:
+    import local as lc                                   # Imports the module Local.
+else:
+    import local_english as lc
 
 
 text2 = input(lc.TEXT)
